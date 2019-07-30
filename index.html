@@ -59,18 +59,39 @@
                 
             }
  */
-            
             /* Use a media query to add a breakpoint at 800px: */
-            @media screen and (max-width: 650px) {
+            @media screen and (max-width: 490px) {
             .portfolio {
                 margin-left: -50px; /* The width is 100%, when the viewport is 800px or smaller */
             }
             .carousel-indicators--thumbnials {
                 margin:-30%;
             }
-
+            .imagepos{
+                padding-top: 0 !important;
+                padding-left: 44px !important;
+                
+            }
+            .custom{
+                width: 100px !important ;
+                height: 100px !important ;
+            }
+            .title{
+                padding-left: 60% !important;
+                margin-top : -115px !important;
+            }
+            .para{
+                padding-left: 155px !important;
             }
 
+
+        }
+
+            .custom{
+                width: 200px;
+                height: 200px;
+            }
+            
 
 
  .text_block {
@@ -189,15 +210,15 @@
                             </div>
                         </div>
 
-                        <div style="float: left;padding-top: 14%; padding-left: 32%;">
-                            <img class="rounded-circle" src="pic.jpg" style="width: 200px;height:200px;" />
+                        <div style="float: left;padding-top: 14%; padding-left: 32%;" class="imagepos">
+                            <img class="rounded-circle img-responsive custom" src="pic.jpg"/>
                             <h1 class="title" style="padding-left: 50px; padding-top:20px;">Name</h1>
-                            <p style="padding-left: 60px;font-family: 'Josefin Sans',sans-serif;">lives in Delhi</p>
+                            <p class="para" style="padding-left: 60px;font-family: 'Josefin Sans',sans-serif;">lives in Delhi</p>
                         </div>
                     </div>
                         
                     <div class="carousel-caption d-md-block text_block">
-                        <h5 class="animated fadeInRight">Portfolio</h5>
+                        <h5 class="animated fadeInRight portfolio">Portfolio</h5>
 
                     </div>
                 </div>
@@ -241,7 +262,8 @@
         $('.carousel').carousel({
             interval: false,
             pause: false,
-            allowpagesscroll:'vertical'
+            allowPageScroll:"vertical"
+
         });
 
    </script>
