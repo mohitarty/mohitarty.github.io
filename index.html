@@ -1,1 +1,238 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400&display=swap" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                font-family: 'Pacifico', cursive;
+                color: #ffffff;
+            }
+
+            h5 {
+                display: inline-block;
+                padding: 10px;
+                border-top-left-radius: 10px;
+                font-family: 'Pacifico', cursive;
+                font-size: 2.0em;
+                border-top-right-radius: 10px;
+            }
+
+            .full-screen {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            .two {
+                background-color: #34ADFF;
+                background-image: -webkit-linear-gradient(150deg, #00B4DB 46%, #0083B0 35%);
+                min-height: 100%;
+
+            }
+
+            .three {
+                background-color: #34ADFF;
+                background-image: -webkit-linear-gradient(154deg, #0083B0 50%, #00B4DB 35%);
+                min-height: 100%;
+            }
+
+            .four {
+                background-color: #34ADFF;
+                background-image: -webkit-linear-gradient(150deg, #00B4DB 50%, #0083B0 35%);
+                min-height: 100%;
+            }
+
+            /* .carousel-indicators {
+                top: 50px;
+                left:auto;
+                
+            }
+ */
+
+
+
+ .text_block {
+                top: 70px;
+                left:78%;
+            }
+
+            /**
+ * Change animation duration
+ */
+            .animated {
+                -webkit-animation-duration: 1.5s;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fadeInRight {
+                from {
+                    opacity: 0;
+                    -webkit-transform: translate3d(100px, 0, 0);
+                    transform: translate3d(100px, 0, 0);
+                }
+
+                to {
+                    opacity: 1;
+                    -webkit-transform: none;
+                    transform: none;
+                }
+            }
+
+            @keyframes fadeInRight {
+                from {
+                    opacity: 0;
+                    -webkit-transform: translate3d(100px, 0, 0);
+                    transform: translate3d(100px, 0, 0);
+                }
+
+                to {
+                    opacity: 1;
+                    -webkit-transform: none;
+                    transform: none;
+                }
+            }
+
+            .fadeInRight {
+                -webkit-animation-name: fadeInRight;
+                animation-name: fadeInRight;
+            }
+
+            .hello_text {
+                padding-top: 19%;
+                padding-left: 6%;
+                font-weight: 900;
+                font-size: 3.0em;
+                /* text-shadow: 2px 2px #000000; */
+
+            }
+
+ 
+
+                /* Carousel */
+
+
+#quote-carousel .carousel-control {
+    background: none;
+    color: #CACACA;
+    font-size: 2.3em;
+    text-shadow: none;
+}
+
+
+#quote-carousel .carousel-indicators i {
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+    cursor: pointer;
+    opacity: 0.5;
+
+}
+#quote-carousel .carousel-indicators .active {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    padding-top: 4px;
+    padding-left: 6px;
+}
+</style>
+    </head>
+
+    <body>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+
+            <ul class="carousel-indicators carousel-indicators--thumbnails">
+            <i class="fa fa-user fa-2x active" style="color: #ffffff; padding-left:9px;" data-target="#carouselExampleIndicators" data-slide-to="0">
+            </i>
+            <i class="fa fa-book fa-2x " style="color: #ffffff;" data-target="#carouselExampleIndicators" data-slide-to="1">
+                </i>
+            <i class="fa fa-mobile fa-2x " style="color:#ffffff; padding-left: 13px;" data-target="#carouselExampleIndicators" data-slide-to="2">
+            </i>
+
+            </ul>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="carousel-item active animated">
+                    <div class="two">
+                        <div style="float: left; padding-left: 2%;padding-top: 6%;">
+                            <div class="container">
+                            <h1 class="hello_text">Hello</h1>
+                            <p style="font-weight: 400;font-size: 2.0em;padding-top:20px;padding-left:6%;">I Design and
+                                Build Ui Design .</p>
+                            <p
+                                style="padding-top: 2%;padding-left:6%;font-size: 1.4em;font-family: 'Josefin Sans',sans-serif; font-weight: 300;">
+                                I have a diverse set of skills,ranging from<br>design to HTML + CSS + JavaScript all
+                                <br>the way to PHP, and love to experiment with designing stuff.</p>
+                            </div>
+                        </div>
+
+                        <div style="float: left;padding-top: 14%; padding-left: 32%;">
+                            <img class="rounded-circle" src="pic.jpg" style="width: 200px;height:200px;" />
+                            <h1 class="title" style="padding-left: 50px; padding-top:20px;">Name</h1>
+                            <p style="padding-left: 60px;font-family: 'Josefin Sans',sans-serif;">lives in Delhi</p>
+                        </div>
+                    </div>
+                        
+                    <div class="carousel-caption d-md-block text_block">
+                        <h5 class="animated fadeInRight">Portfolio</h5>
+
+                    </div>
+                </div>
+                <div class="carousel-item animated">
+                    <div class="three"></div>
+                    <div class="carousel-caption d-md-block text_block">
+                        <h5 class="animated fadeInRight">Work</h5>
+                    </div>
+                </div>
+                <div class="carousel-item animated">
+                    <div class="four"></div>
+                    <div class="carousel-caption d-md-block text_block">
+                        <h5 class="animated fadeInRight">Contact Me</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+            <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a> -->
+        </div>  
+        </div>
+
+
+        
+</body>
+
+
+    <script>
+        var $item = $('.carousel-item');
+        var $wHeight = $(window).height();
+        $item.eq(0).addClass('active');
+        $item.height($wHeight);
+        $item.addClass('full-screen');  
+
+        $('.carousel').carousel({
+            interval: false,
+            pause: false
+        });
+
+   </script>
+
+
+</html>
