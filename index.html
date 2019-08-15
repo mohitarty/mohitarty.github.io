@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en">
 
     <head>
@@ -9,14 +10,29 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+       
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+
+        
         <style>
             body {
                 font-family: 'Pacifico', cursive;
                 color: #ffffff;
+                
+                
+                position:relative;
+
+            }
+
+            .jose{
+                    font-family: 'Josefin Sans',sans-serif;
+                    font-weight: : 300;
+                    color: #000;
             }
 
             h5 {
@@ -32,24 +48,26 @@
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
+                overflow: scroll;
+
             }
 
             .two {
                 background-color: #34ADFF;
-                background-image: -webkit-linear-gradient(150deg, #00B4DB 46%, #0083B0 35%);
+                background-image: -webkit-linear-gradient(150deg, #ffffff 46%, #ff5722 35%);
                 min-height: 100%;
 
             }
 
             .three {
                 background-color: #34ADFF;
-                background-image: -webkit-linear-gradient(154deg, #0083B0 50%, #00B4DB 35%);
+                background-image: -webkit-linear-gradient(154deg, #ff5722 50%, #ffffff 35%);
                 min-height: 100%;
             }
 
             .four {
                 background-color: #34ADFF;
-                background-image: -webkit-linear-gradient(150deg, #00B4DB 50%, #0083B0 35%);
+                background-image: -webkit-linear-gradient(150deg, #ffffff 50%, #ff5722 35%);
                 min-height: 100%;
             }
 
@@ -69,6 +87,7 @@
             .imagepos{
                 padding-top: 0 !important;
                 padding-left: 44px !important;
+
                 
             }
             .custom{
@@ -90,13 +109,14 @@
                 width: 200px;
                 height: 200px;
             }
-            html{overflow-y:scroll}
+           
 
 
 
  .text_block {
-                top: 70px;
-                left:78%;
+                top: 20px;
+                /*left:78%;*/
+                height: 10px;
             }
 
             /**
@@ -177,20 +197,271 @@
     padding-top: 4px;
     padding-left: 6px;
 }
+
+
+.flip-card {
+  background-color: transparent;
+ perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+   
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+
+        color: black;
+        background-color: rgb(249,249,249);
+        min-height: 100%;
+        border: 1px solid #f1f1f1;
+        border-radius: 5px;
+    }
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #ffffff;
+  color: #000;
+  transform: rotateY(180deg);
+}
+
+
+a.lightbox img {
+height: 150px;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+margin: 94px 20px 20px 20px;
+}
+
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+.lightbox-target {
+position: fixed;
+top: -100%;
+width: 100%;
+background: rgba(0,0,0,.7);
+width: 100%;
+opacity: 0;
+-webkit-transition: opacity .5s ease-in-out;
+-moz-transition: opacity .5s ease-in-out;
+-o-transition: opacity .5s ease-in-out;
+transition: opacity .5s ease-in-out;
+overflow: hidden;
+}
+
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+.lightbox-target img {
+margin: auto;
+position: absolute;
+top: 0;
+left:0;
+right:0;
+bottom: 0;
+max-height: 0%;
+max-width: 0%;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-sizing: border-box;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Styles the close link, adds the slide down transition */
+
+a.lightbox-close {
+display: block;
+width:50px;
+height:50px;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -80px;
+right: 0;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:before {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+
+a.lightbox-close:after {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+.lightbox-target:target {
+opacity: 1;
+top: 0;
+bottom: 0;
+}
+
+.lightbox-target:target img {
+max-height: 100%;
+max-width: 100%;
+}
+
+.lightbox-target:target a.lightbox-close {
+top: 0px;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 80%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+
+.wrap {
+  width: 500%;
+  margin: 0 auto;
+}
+
+
+
+.bar {
+  background: #ff5722;
+  width: 0;
+  margin: .25em 0;
+  color: #fff;
+  position: relative;
+  transition: width 2s, background .2s;
+  -webkit-transform: translate3d(0, 0, 0);
+  clear: both;
+}
+.bar:nth-of-type(2n) {
+  background: #ffaa8f;
+}
+.bar .label {
+  font-size: .75em;
+  padding: 1em;
+  background: #3d3d3d;
+  width: 8em;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+.bar .label.light {
+  background: #575757;
+}
+
+.count {
+  position: absolute;
+  right: .25em;
+  top: .75em;
+  padding: .15em;
+  font-size: .75em;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
 </style>
     </head>
 
     <body>
+
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <div class="carousel slide" data-ride="carousel" id="quote-carousel">
 
             <ul class="carousel-indicators carousel-indicators--thumbnails">
-            <i class="fa fa-user fa-2x active" style="color: #ffffff; padding-left:9px;" data-target="#carouselExampleIndicators" data-slide-to="0">
+            <i class="fa fa-user fa-2x active" style="color: #000; padding-left:9px;" data-target="#carouselExampleIndicators" data-slide-to="0">
             </i>
-            <i class="fa fa-book fa-2x " style="color: #ffffff;" data-target="#carouselExampleIndicators" data-slide-to="1">
+            <i class="fa fa-book fa-2x " style="color: #000;" data-target="#carouselExampleIndicators" data-slide-to="1">
                 </i>
-            <i class="fa fa-mobile fa-2x " style="color:#ffffff; padding-left: 13px;" data-target="#carouselExampleIndicators" data-slide-to="2">
+            <i class="fa fa-mobile fa-2x " id="target" style="color:#000; padding-left: 13px;" data-target="#carouselExampleIndicators" data-slide-to="2">
             </i>
 
             </ul>
@@ -210,28 +481,175 @@
                             </div>
                         </div>
 
-                        <div style="float: left;padding-top: 14%; padding-left: 32%;" class="imagepos">
+                        <div style="float: left;padding-top: 11%; padding-left: 42%;" class="imagepos">
                             <img class="rounded-circle img-responsive custom" src="pic.jpg"/>
-                            <h1 class="title" style="padding-left: 50px; padding-top:20px;">Name</h1>
-                            <p class="para" style="padding-left: 60px;font-family: 'Josefin Sans',sans-serif;">lives in Delhi</p>
+                            <h1 class="title" style="padding-left: 50px; padding-top:20px;color: #000;">Mohit</h1>
+                            <p class="para" style="padding-left: 54px;font-family: 'Josefin Sans',sans-serif;color: #000;">UI/UX Designer</p>
                         </div>
                     </div>
                         
                     <div class="carousel-caption d-md-block text_block">
-                        <h5 class="animated fadeInRight portfolio">Portfolio</h5>
+                        <h5 class="animated fadeInRight portfolio">Home</h5>
 
                     </div>
                 </div>
                 <div class="carousel-item animated">
-                    <div class="three"></div>
-                    <div class="carousel-caption d-md-block text_block">
-                        <h5 class="animated fadeInRight">Work</h5>
+
+                    <div class="three">
+
+
+                        <div class="container-fluid bg-3" style="padding-top: 4%;">    
+                              <h3 style="color: #000; padding-left: 13%;">Graphic Design</h3><br>
+                              <div class="row justify-content-center">
+                                
+
+                                <div class="flip-card col-sm-3 ">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front">
+                                  <img src="images/newlogo.png" class="img-responsive" style="width:100%; margin-top:40px;" alt="Image">
+                                  </div>
+                                  <div class="flip-card-back">
+                                    <p class="text-center" style="padding-top: 40px;">Logo Design</p>
+                                    <p class=" card-text jose" style="font-weight: 300;padding-top: 5%;">A logo is the central element of a complex identification system that must be functionally extended to all communications of an organization.
+                                    </p>
+                                    <ul class="list-group jose">
+                                        <li class="list-group-item">Software Used</li>
+                                        <li class="list-group-item">Adobe Photoshop / Adobe Illustrator</li>
+                                       
+                                    </ul>
+                                </div>
+                                </div>
+                              </div>
+
+                                
+                               <div class="flip-card col-sm-3 ">
+                                    <div class="flip-card-inner">
+                                        <div class="flip-card-front" >
+                                  <img src="images/mock1.jpg" class="img-responsive" style="width:100%; height:312px; " alt="Image">
+                                  </div>
+                                  <div class="flip-card-back">
+                                    <p class="text-center" style="padding-top: 40px;">Web Mockups Design <a class="lightbox" href="#dog"><i class="fa fa-expand" style="float:right; padding-right: 10px;"></i></a></p>
+
+                                    <p class=" card-text jose" style="font-weight: 300;padding-top: 5%;">A mockup is a prototype if it provides at least part of the functionality of a system and enables testing of a design.
+                                    </p>
+                                    <ul class="list-group jose">
+                                        <li class="list-group-item">Software Used</li>
+                                        <li class="list-group-item">Adobe Photoshop</li>
+                                       
+                                    </ul>
+                                </div>
+                                </div>
+                              </div>
+
+                            <div class="col-sm-3" > 
+                                <div class="card" onclick="myFunction()" style="border: none !important;">
+                                  <img src="images/anim.gif" class="img-responsive" style="width:100%" alt="Image">
+                                <div class="card-body">
+                                <p class="card-text jose">Animations</p>
+                                </div>
+                              </div>    
+                                </div>
+                              </div>
+                            </div><br>
+
+                            <div class="container-fluid bg-3">    
+                                 <h3 style="color: #000; padding-left: 13%;">Web Design | Mobile Design</h3><br>
+                              <div class="row justify-content-center">
+                               
+                                <div class="col-sm-3"> 
+                                <div class="card">
+                                 <a href="https://gaadipartsonline.com/" target="_blank"> <img src="images/gaadi.jpg" class="img-responsive" style="width:100%; height: 260px;" alt="Image"></a>
+                                <div class="card-body">
+                                <p class="card-text jose">Gaadiparts</p>
+                                </div>
+                              </div>    
+                                </div>
+                                <div class="col-sm-3"> 
+                                <div class="card">
+                                 <a href="https://play.google.com/store/apps/details?id=com.app.hungry&hl=en" target="_blank"> <img src="images/hh.jpg" class="img-responsive" style="width:100%; object-fit: cover; height: 260px;" alt="Image"></a>
+                                <div class="card-body">
+                                <p class="card-text jose">Hungry Hub</p>
+                                </div>
+                              </div>    
+                                </div>
+                                 <div class="col-sm-3"> 
+                                <div class="card">
+                                 <a href="images/ss.png" target="_blank"> <img src="images/ss.png" class="img-responsive" style="width:100%; height: 260px; object-fit: cover;" alt="Image"></a>
+                                <div class="card-body">
+                                <p class="card-text jose">Android Application Design</p>
+                                </div>
+                              </div>    
+                                </div>
+                               
+                              </div>
+                            </div><br><br>
+                        
                     </div>
+                    
+                    <div class="carousel-caption d-md-block text_block">
+                        <h5 class="animated fadeInRight" style="color: #000;">Portfolio</h5>
+                    </div>
+                    <div class="lightbox-target" id="dog">
+                                   <img src="images/mock.jpg"/>
+                                   <a class="lightbox-close" href="#"></a>
+                              </div>
+                              
                 </div>
                 <div class="carousel-item animated">
-                    <div class="four"></div>
+                    <div class="four">
+                      
+                         <div style="float: left; padding-left: 10%;padding-top: 15%;">
+                            <div class="container">
+                            <h1>Contact me</h1>
+                            <i class="fa fa-envelope fa-2x"></i>
+                           <p
+                                style="padding-top: 2%; 
+                                margin-top: -14%;
+                                padding-left: 15%;
+                                font-size: 1.4em;
+                                font-family: 'Josefin Sans',sans-serif; 
+                                font-weight: 300;">
+                                
+                               mohitme100@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div style="float: left;padding-top: 11%; padding-left: 42%;" class="imagepos">
+                           <div class="wrap">
+                                    <h1 style="color: #000;padding-top: 5%; font-family: 'Josefin Sans',sans-serif;font-size: 1.4em;text-align: center;">My Skills</h1> 
+                                    <div class="holder">
+                                        <div class="bar cf" data-percent="85%">
+                                            <span class="label">Photoshop</span>
+                                        </div><div class="bar cf" data-percent="75%">
+                                            <span class="label light">Illustrator</span>
+                                        </div>
+                                        <div class="bar cf" data-percent="100%">
+                                            <span class="label light">HTML</span>
+                                        </div>
+                                        <div class="bar cf" data-percent="100%">
+                                            <span class="label">CSS</span>
+                                        </div>
+                                        <div class="bar cf" data-percent="80%">
+                                            <span class="label light">jQuery</span>
+                                        </div>
+                                        <div class="bar cf" data-percent="75%">
+                                            <span class="label">PHP</span></div>
+                                        <div class="bar cf" data-percent="80%">
+                                            <span class="label light">WordPress</span>
+                                        </div>
+                                        <div class="bar cf" data-percent="70%">
+                                            <span class="label">SASS/SCSS</span>
+                                        </div>
+                                    </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
                     <div class="carousel-caption d-md-block text_block">
-                        <h5 class="animated fadeInRight">Contact Me</h5>
+                        <h5 class="animated fadeInRight">About Me</h5>
                     </div>
                 </div>
             </div>
@@ -245,6 +663,7 @@
                 <span class="sr-only">Next</span>
             </a> -->
         </div>  
+        <div id="snackbar">Animations are cool right!!</div>
         </div>
 
 
@@ -266,7 +685,39 @@
 
         });
 
-   </script>
+function myFunction() {
+var x = document.getElementById("snackbar");
+x.className = "show";
+setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+<script>
+setTimeout(function start (){
+  
+  $('.bar').each(function(i){  
+    var $bar = $(this);
+    $(this).append('<span class="count"></span>')
+    setTimeout(function(){
+      $bar.css('width', $bar.attr('data-percent'));      
+    }, i*100);
+  });
+
+$('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).parent('.bar').attr('data-percent')
+    }, {
+        duration: 2000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now) +'%');
+        }
+    });
+});
+
+}, 500)
+
+</script>
+
 
 
 </html>
